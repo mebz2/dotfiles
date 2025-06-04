@@ -14,7 +14,7 @@
 }
 
 #workspaces {
-	border-radius: 5px;
+	border-radius: 10px;
 	margin: 5px;
 	background: #101010;
 	margin-left: 2px;
@@ -31,6 +31,10 @@
 	border-radius: 5px;
 }
 
+#workspaces button.urgent {
+	color: #071ff2;
+}
+
 button {
 	background: transparent;
 }
@@ -38,6 +42,7 @@ button {
 #workspaces button:hover {
 	background: #1e1e1e;
 	border: 0px solid transparent;
+	border-radius: 10px;
 }
 
 #custom-music,
@@ -61,7 +66,7 @@ button {
 
 #clock {
 	color: #8caaee;
-	border-radius: 5px;
+	border-radius: 10px;
 }
 
 #custom-weather {
@@ -93,7 +98,7 @@ button {
 
 #pulseaudio {
 	color: #ea999c;
-	border-radius: 5px 0px 0px 5px;
+	border-radius: 10px 0px 0px 10px;
 }
 
 #custom-docker {
@@ -111,7 +116,7 @@ button {
 
 #custom-power {
 	margin-right: 1rem;
-	border-radius: 0px 5px 5px 0px;
+	border-radius: 0px 10px 10px 0px;
 	color: #e78284;
 }
 

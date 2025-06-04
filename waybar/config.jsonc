@@ -128,8 +128,7 @@
 	},
 	"battery": {
 		"states": {
-			"warning": 20,
-			"critical": 15
+			"warning": 20
 		}
 	}
 }

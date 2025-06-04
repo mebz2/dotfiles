@@ -16,8 +16,14 @@ alias src='source ~/.zshrc'
 alias code="code --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland "
 alias ls='eza --icons'
 alias ll='ls -l'
+alias la='ls -al'
 alias v="nvim"
 alias ff='fastfetch'
+alias gs='git status'
+alias gc='git commit'
+alias gi='git init'
+alias ga='git add'
+
 #key bindings
 #
 bindkey "^h" backward-word

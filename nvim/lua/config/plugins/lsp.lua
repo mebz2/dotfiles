@@ -17,7 +17,7 @@ return {
 		config = function()
 			local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-			-- Consistent ronding for boders
+			-- Consistent rounding for boders
 			vim.diagnostic.config({
 				virtual_text = true,
 				underline = true,
@@ -39,9 +39,39 @@ return {
 					},
 				},
 			})
+			-- Configure borders for LSP-related floating windows
+			local function set_lsp_handler_borders(border_style)
+				local lsp_handlers = {
+					["textDocument/definition"] = vim.lsp.handlers.definition,
+					["textDocument/typeDefinition"] = vim.lsp.handlers.type_definition,
+					["textDocument/declaration"] = vim.lsp.handlers.declaration,
+					["textDocument/implementation"] = vim.lsp.handlers.implementation,
+					["textDocument/references"] = vim.lsp.handlers.references,
+					-- Add any other handlers that open floating windows if needed
+				}
+
+				for name, handler in pairs(lsp_handlers) do
+					vim.lsp.handlers[name] = vim.lsp.with(handler, {
+						border = border_style,
+					})
+				end
+			end
+
+			set_lsp_handler_borders("rounded")
+
+			-- Optional: A more general override for floating previews opened by LSP utils
+			-- This helps catch some edge cases or plugins that might use this utility
+			local original_open_floating_preview = vim.lsp.util.open_floating_preview
+			vim.lsp.util.open_floating_preview = function(contents, syntax, opts, ...)
+				opts = opts or {}
+				opts.border = opts.border or "rounded" -- Default to rounded if not specified
+				return original_open_floating_preview(contents, syntax, opts, ...)
+			end
+
+
+
 
 			require 'lspconfig'.vtsls.setup { capabilities = capabilities }
-
 			require 'lspconfig'.tinymist.setup {
 				capabilities = capabilities,
 				settings = {
@@ -58,24 +88,13 @@ return {
 			require 'lspconfig'.cssls.setup { capabilities = capabilities }
 			require 'lspconfig'.rust_analyzer.setup { capabilities = capabilities }
 
-			window = {
-				completion = {
-					scrollbar = false,
-					border = "rounded",
-					winhighlight = "Normal:CmpNormal",
-				},
-				documentation = {
-					scrollbar = false,
-					border = "rounded",
-					winhighlight = "Normal:CmpNormal",
-				}
-			}
+
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				callback = function(args)
 					local client = vim.lsp.get_client_by_id(args.data.client_id)
-					vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-					vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+					vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, vim.opts)
+					vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, vim.opts)
 					if not client then return end
 					if client.supports_method('textDocument/formatting') then
 						-- format current buffer on save

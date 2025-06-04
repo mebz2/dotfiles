@@ -1,8 +1,8 @@
 #!/bin/zsh
 
-if [[ -n $(pgrep wallpaper.zsh) ]]; then
-	kill $(pgrep wallpaper.zsh)
-	~/Documents/bash-scripts/wallpaper.zsh
+if [[ -n $(pgrep wallpaper.sh) ]]; then
+	kill $(pgrep wallpaper.sh)
+	$HOME/dotfiles/hypr/scripts/wallpaper.sh
 else
-	~/Documents/bash-scripts/wallpaper.zsh
+	$HOME/dotfiles/hypr/scripts/wallpaper.sh
 fi

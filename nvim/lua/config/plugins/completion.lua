@@ -30,6 +30,19 @@ return {
 			sources = {
 				default = { 'lsp', 'path', 'snippets', 'buffer' },
 			},
+			completion = {
+				menu = {
+					border = "rounded",
+				},
+				documentation = {
+					auto_show = true,
+					window = {
+						border = "rounded",
+					},
+				},
+			}
 		},
+
+
 	}
 }

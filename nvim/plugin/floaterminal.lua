@@ -1,6 +1,5 @@
 -- FLoating terminal
 vim.keymap.set("t", "<c-n>", "<c-\\><c-n>")
-
 local state = {
 	floating = {
 		buf = -1,
