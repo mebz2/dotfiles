@@ -49,6 +49,7 @@ return {
 				},
 
 			}
+			require 'lspconfig'.ruff.setup { capabilities = capabilities }
 			require 'lspconfig'.jsonls.setup { capabilities = capabilities }
 			require 'lspconfig'.lua_ls.setup { capabilities = capabilities }
 			require 'lspconfig'.clangd.setup { capabilities = capabilities }
