@@ -33,6 +33,7 @@ return {
 			completion = {
 				menu = {
 					border = "rounded",
+					scrollbar = false,
 				},
 				documentation = {
 					auto_show = true,
