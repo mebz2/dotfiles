@@ -43,15 +43,19 @@ export TERM="xterm-256color"
 
 autoload -Uz vcs_info
 
+setopt prompt_subst
+
+# Show only the branch name in brackets
+zstyle ':vcs_info:git:*' formats '%F{green}git:(%b)%f'
+zstyle ':vcs_info:git:*' actionformats '%F{yellow}git:(%b)%f'
+
 precmd() {
   vcs_info
 }
 
-# Show only the branch name in brackets
-zstyle ':vcs_info:git:*' formats '%F{green}(%b)%f'
-zstyle ':vcs_info:git:*' actionformats '%F{green}(%b)%f'
 
-setopt prompt_subst
-PROMPT='%c${vcs_info_msg_0_} %# '
+PROMPT='-> %c ${vcs_info_msg_0_:+" "}${vcs_info_msg_0_} '
+
+# %#
 
 

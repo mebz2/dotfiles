@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 
 WALLPAPER_DIR="$HOME/dotfiles/hypr/altWallpapers"
-INTERVAL=120
+INTERVAL=200
 
 while true; do
     WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)

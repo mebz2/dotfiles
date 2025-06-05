@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/usr/bin/env bash
 
 if [[ $# -eq 1 ]]; then
 	if [[ $1 == '.' ]]; then

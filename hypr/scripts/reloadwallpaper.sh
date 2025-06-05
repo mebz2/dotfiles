@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
 if [[ -n $(pgrep wallpaper.sh) ]]; then
 	kill $(pgrep wallpaper.sh)

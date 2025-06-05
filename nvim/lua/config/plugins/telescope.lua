@@ -8,22 +8,29 @@ return {
 		},
 		config = function()
 			require('telescope').setup {
+				defaults = {
+					path_display = { "smart" },
+				},
 				pickers = {
-					find_files = {
-						theme = "dropdown" -- "dropdown"  ivy, "cursor", dropdown
-					},
-					live_grep = {
-						theme = "dropdown"
-					},
-					buffers = {
-						theme = "dropdown"
-					},
-					help_tags = {
-						theme = "dropdown"
-					}
+					-- find_files = {
+					-- 	-- theme = "dropdown" -- "dropdown"  ivy, "cursor", dropdown
+					-- },
+					-- live_grep = {
+					-- 	theme = "dropdown"
+					-- },
+					-- buffers = {
+					-- 	theme = "dropdown"
+					-- },
+					-- help_tags = {
+					-- 	theme = "dropdown"
+					-- }
 
 				},
 				extensions = {
+					themes = {
+						enable_previewer = false,
+						enable_live_preview = false,
+					},
 					fzf = {}
 				}
 			}
