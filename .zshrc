@@ -9,7 +9,7 @@ compinit
 # End of lines added by compinstall
 #
 #
-alias c="source ~/dotfiles/hypr/scripts/cd.zsh"
+alias c="source ~/dotfiles/hypr/scripts/cd.sh"
 alias cl='clear'
 alias clr='clear; fastfetch'
 alias src='source ~/.zshrc'
