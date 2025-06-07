@@ -79,6 +79,7 @@ return {
 				},
 
 			}
+			require 'lspconfig'.gopls.setup { capabilities = capabilities }
 			require 'lspconfig'.ruff.setup { capabilities = capabilities }
 			require 'lspconfig'.jsonls.setup { capabilities = capabilities }
 			require 'lspconfig'.lua_ls.setup { capabilities = capabilities }

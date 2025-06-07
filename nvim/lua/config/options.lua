@@ -29,4 +29,4 @@ vim.opt.inccommand = 'split'
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "115"

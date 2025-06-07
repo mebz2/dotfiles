@@ -7,13 +7,10 @@ zstyle :compinstall filename '/home/mebz/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-#
-#
 alias c="source ~/dotfiles/hypr/scripts/cd.sh"
 alias cl='clear'
 alias clr='clear; fastfetch'
 alias src='source ~/.zshrc'
-alias code="code --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland "
 alias ls='eza --icons'
 alias ll='ls -l'
 alias la='ls -al'
@@ -51,10 +48,15 @@ zstyle ':vcs_info:git:*' actionformats '%F{yellow}git:(%b)%f'
 
 precmd() {
   vcs_info
+if [[ $PWD == $HOME ]]; then
+    PROMPT_PATH=""
+  else
+    PROMPT_PATH="%c"
+  fi
 }
 
 
-PROMPT='-> %c ${vcs_info_msg_0_:+" "}${vcs_info_msg_0_} '
+PROMPT='-> ${PROMPT_PATH}${vcs_info_msg_0_:+" "}${vcs_info_msg_0_} %# '
 
 # %#
 
