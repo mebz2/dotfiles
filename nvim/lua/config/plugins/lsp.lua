@@ -21,7 +21,7 @@ return {
 			vim.diagnostic.config({
 				virtual_text = true,
 				underline = true,
-				update_in_insert = false,
+				update_in_insert = true,
 				float = {
 					border = "rounded",
 					source = true,
@@ -80,6 +80,7 @@ return {
 
 			}
 			require 'lspconfig'.gopls.setup { capabilities = capabilities }
+			require 'lspconfig'.zls.setup { capabilities = capabilities }
 			require 'lspconfig'.ruff.setup { capabilities = capabilities }
 			require 'lspconfig'.jsonls.setup { capabilities = capabilities }
 			require 'lspconfig'.lua_ls.setup { capabilities = capabilities }
