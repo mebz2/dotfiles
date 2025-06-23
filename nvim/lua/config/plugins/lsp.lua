@@ -80,6 +80,7 @@ return {
 
 			}
 			require 'lspconfig'.gopls.setup { capabilities = capabilities }
+			require 'lspconfig'.phpactor.setup { capabilities = capabilities }
 			require 'lspconfig'.zls.setup { capabilities = capabilities }
 			require 'lspconfig'.ruff.setup { capabilities = capabilities }
 			require 'lspconfig'.jsonls.setup { capabilities = capabilities }

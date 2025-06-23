@@ -13,6 +13,7 @@ alias clr='clear; fastfetch'
 alias src='source ~/.zshrc'
 alias ls='eza --icons'
 alias ll='ls -l'
+alias l='ls'
 alias la='ls -al'
 alias v="nvim"
 alias ff='fastfetch'
@@ -20,6 +21,7 @@ alias gs='git status'
 alias gc='git commit'
 alias gi='git init'
 alias ga='git add'
+
 
 #key bindings
 #
@@ -61,3 +63,7 @@ PROMPT='-> ${PROMPT_PATH}${vcs_info_msg_0_:+" "}${vcs_info_msg_0_} %# '
 # %#
 
 
+export XDG_CURRENT_DESKTOP=Hyprland
+export XDG_SESSION_DESKTOP=Hyprland
+export FILE_MANAGER=nemo
+export GTK_USE_PORTAL=1
