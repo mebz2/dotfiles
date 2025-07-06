@@ -43,3 +43,7 @@ vim.keymap.set('n', '<leader>ta', ':tabnew<CR>', { noremap = true, silent = true
 vim.keymap.set('n', '<leader>w', ':tabclose<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>tn', ':tabnext<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>tp', ':tabprevious<CR>', { noremap = true, silent = true })
+
+-- lsp keymaps
+vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, vim.opts)
+vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, vim.opts)

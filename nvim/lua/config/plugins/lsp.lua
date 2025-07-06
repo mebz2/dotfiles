@@ -2,6 +2,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
+			'saghen/blink.cmp',
 			{
 				"folke/lazydev.nvim",
 				ft = "lua", -- only load on lua files
@@ -39,6 +40,7 @@ return {
 					},
 				},
 			})
+
 			-- Configure borders for LSP-related floating windows
 			local function set_lsp_handler_borders(border_style)
 				local lsp_handlers = {
@@ -80,6 +82,17 @@ return {
 
 			}
 			require 'lspconfig'.gopls.setup { capabilities = capabilities }
+			require 'lspconfig'.pylsp.setup {
+				capabilities = capabilities,
+				seettings = {
+					pylsp = {
+						plugins = {
+							ignore = { 'W391' },
+							maxLineLength = 100
+						}
+					}
+				}
+			}
 			require 'lspconfig'.phpactor.setup { capabilities = capabilities }
 			require 'lspconfig'.zls.setup { capabilities = capabilities }
 			require 'lspconfig'.ruff.setup { capabilities = capabilities }
@@ -96,9 +109,8 @@ return {
 			vim.api.nvim_create_autocmd("LspAttach", {
 				callback = function(args)
 					local client = vim.lsp.get_client_by_id(args.data.client_id)
-					vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, vim.opts)
-					vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, vim.opts)
 					if not client then return end
+					---@diagnostic disable-next-line: missing-parameter
 					if client.supports_method('textDocument/formatting') then
 						-- format current buffer on save
 						vim.api.nvim_create_autocmd('BufWritePre', {

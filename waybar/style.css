@@ -54,6 +54,7 @@ button {
 #network,
 #cpu,
 #memory,
+#temperature,
 #custom-lock,
 #custom-power,
 #custom-weather,
@@ -64,9 +65,17 @@ button {
 	margin: 5px 0;
 }
 
+#custom-uptime {
+	color: #c6d0f5;
+	/* color: #8caaee; */
+	border-radius: 10px 10px 10px 10px;
+	margin-right: 10px;
+}
+
 #clock {
-	color: #8caaee;
-	border-radius: 10px;
+	color: #c6d0f5;
+	/* color: #8caaee; */
+	border-radius: 10px 10px 10px 10px;
 }
 
 #custom-weather {
@@ -76,15 +85,20 @@ button {
 }
 
 #battery {
-	color: #a6d189;
+	color: #c6d0f5;
 }
 
 #battery.charging {
-	color: green;
+	color: greenyellow;
 }
 
 #battery.warning:not(.charging) {
 	color: #e78284;
+}
+
+#temperature.critical {
+	/* background-color: #eb4d4b; */
+	color: #eb4d4b;
 }
 
 #backlight {
@@ -97,7 +111,8 @@ button {
 }
 
 #pulseaudio {
-	color: #ea999c;
+	/* color: #ea999c; */
+	color: #c6d0f5;
 	border-radius: 10px 0px 0px 10px;
 }
 
