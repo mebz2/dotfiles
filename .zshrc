@@ -1,13 +1,12 @@
 # Lines configured by zsh-newuser-install
 bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
+# End of lines configured by zsh-newuser-install The following lines were added by compinstall
 zstyle :compinstall filename '/home/mebz/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-alias c="source ~/dotfiles/hypr/scripts/cd.sh"
+alias c="source ~/dotfiles/scripts/cd.sh"
 alias cl='clear'
 alias clr='clear; fastfetch'
 alias src='source ~/.zshrc'
@@ -21,6 +20,7 @@ alias gs='git status'
 alias gc='git commit'
 alias gi='git init'
 alias ga='git add'
+alias chrome='google-chrome-stable'
 
 
 #key bindings

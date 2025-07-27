@@ -2,7 +2,7 @@
 	"layer": "top",
 	"position": "top",
 	"modules-left": [
-		"custom/uptime",
+		// "custom/uptime",
 		"hyprland/workspaces"
 	],
 	"modules-center": [
@@ -43,7 +43,7 @@
 	},
 	"clock": {
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-		"format": "{:%d - %I:%M}",
+		"format": "{:%d - %I:%M:%S}",
 		"interval": 1
 	},
 	"network": {

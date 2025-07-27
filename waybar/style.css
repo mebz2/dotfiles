@@ -10,14 +10,14 @@
 #waybar {
 	background: transparent;
 	color: #c6d0f5;
-	margin: 2px 2px;
+	margin: 0px 0px;
 }
 
 #workspaces {
 	border-radius: 10px;
 	margin: 5px;
 	background: #101010;
-	margin-left: 2px;
+	margin-left: 10px;
 }
 
 #workspaces button {
@@ -89,7 +89,7 @@ button {
 }
 
 #battery.charging {
-	color: greenyellow;
+	color: mediumspringgreen;
 }
 
 #battery.warning:not(.charging) {
