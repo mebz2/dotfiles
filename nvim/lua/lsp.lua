@@ -1,7 +1,10 @@
 vim.lsp.enable({
 	"lua_ls",
 	"bashls",
-	"ts_ls"
+	"ts_ls",
+	-- "vtsls"
+	"tailwindcss",
+	"cssls",
 })
 
 

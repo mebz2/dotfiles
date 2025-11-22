@@ -1,3 +1,4 @@
 #!/bin/bash
 
-ln -s ~/dotfiles/nvim ~/.config/nvim -- link neovim config
+# comment
+ln -s ~/dotfiles/nvim ~/.config/nvim

@@ -1,12 +1,14 @@
 local keymap = vim.keymap
-local s = {silent = true}
+local s = { silent = true }
 
 keymap.set("i", "jj", "<Esc>")
 
-keymap.set("n", "<leader>e", ":Neotree filesystem reveal<CR>", {silent = true} ) -- open explorer
-keymap.set("n", "<leader>ce", ":Neotree close<CR>", {silent = true} ) -- open explorer
+keymap.set("n", "-", ":Oil<CR>", { silent = true })                                     -- open explorer
 
-keymap.set("n", "<leader>w", ":write<CR>" )
+keymap.set("n", "<leader>e", ":Neotree filesystem reveal right<CR>", { silent = true }) -- open explorer
+keymap.set("n", "<leader>ce", ":Neotree close<CR>", { silent = true })                  -- open explorer
+
+keymap.set("n", "<leader>w", ":write<CR>")
 keymap.set("n", "<leader>qq", ":qall<CR>")
 
 -- move up and down wrapped lines
@@ -14,8 +16,8 @@ keymap.set("n", "j", "gj")
 keymap.set("n", "k", "gk")
 
 -- go to end and beginning of the line
-keymap.set({"n", "v"}, "L", "$")
-keymap.set({"n", "v"}, "H", "^")
+keymap.set({ "n", "v" }, "L", "$")
+keymap.set({ "n", "v" }, "H", "^")
 
 keymap.set("n", "K", vim.lsp.buf.hover)
 keymap.set("n", "gd", vim.lsp.buf.definition)
@@ -33,10 +35,11 @@ keymap.set("n", "<leader>ps", '<cmd>lua vim.pack.update()<CR>')
 
 -- telescope keymaps
 local builtin = require("telescope.builtin")
-keymap.set("n","<leader>ff", builtin.find_files) 
-keymap.set("n","<leader>fg", builtin.live_grep) 
-keymap.set("n","<leader>fh", builtin.help_tags) 
-keymap.set("n","<leader>fb", builtin.buffers) 
+keymap.set("n", "<leader>ff", builtin.find_files)
+keymap.set("n", "<leader>fg", builtin.live_grep)
+keymap.set("n", "<leader>fh", builtin.help_tags)
+keymap.set("n", "<leader>fb", builtin.buffers)
+keymap.set("n", "<leader>fd", builtin.diagnostics)
 
 -- miniharp keymaps
 keymap.set("n", "<leader>m", '<cmd>lua require("miniharp").toggle_file()<CR>')
