@@ -8,6 +8,7 @@ o.relativenumber = true
 o.tabstop = 4
 o.softtabstop = 4
 o.shiftwidth = 4
+o.shiftround = true
 
 o.termguicolors = true
 

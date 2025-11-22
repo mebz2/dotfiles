@@ -27,4 +27,5 @@ keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" }, s)
 keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" }, s)
 keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" }, s)
 
-
+-- update plugins
+keymap.set("n", "<leader>ps", '<cmd>lua vim.pack.update()<CR>')
