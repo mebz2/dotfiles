@@ -6,8 +6,24 @@ vim.pack.add({
     { src = "https://github.com/nvim-neo-tree/neo-tree.nvim"},
     { src = "https://github.com/MunifTanjim/nui.nvim"},
     { src = "https://github.com/nvim-lua/plenary.nvim"},
+    { src = "https://github.com/nvim-telescope/telescope.nvim"},
+
 })
 
+require("telescope").setup({
+	pickers = {
+		find_files = {
+			theme = "dropdown"
+		},
+		live_grep = {
+			theme = "dropdown"
+		},
+		buffers = {
+			theme = "dropdown"
+		},
+
+	}
+})
 require("gitsigns").setup({signcolumn = true})
 require("mason").setup({})
 require("nvim-web-devicons").setup({})
