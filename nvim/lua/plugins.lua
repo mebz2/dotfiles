@@ -16,6 +16,7 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	-- { src = "https://github.com/norcalli/nvim-colorizer.lua" },
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
+	{ src = "https://github.com/ellisonleao/gruvbox.nvim" }
 })
 
 require("lualine").setup({})
