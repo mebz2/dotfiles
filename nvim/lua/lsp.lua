@@ -5,6 +5,8 @@ vim.lsp.enable({
 	-- "vtsls"
 	"tailwindcss",
 	"cssls",
+	"asm_lsp",
+	"marksman",
 })
 
 
