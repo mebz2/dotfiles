@@ -9,9 +9,10 @@ o.tabstop = 4
 o.softtabstop = 4
 o.shiftwidth = 4
 o.shiftround = true
-o.scrolloff = 10
+o.scrolloff = 50
 o.fillchars:append({ eob = " " }) -- replace tildas
 o.termguicolors = true
+o.linebreak = true
 
 o.swapfile = false
 
@@ -25,3 +26,10 @@ o.undofile = true
 o.winborder = "rounded"
 o.cursorline = true -- highlight the current line
 o.autoindent = true -- Enable auto indentation
+
+-- o.list = true
+-- o.listchars = {
+-- 	tab = '» ',
+-- 	trail = '·',
+-- 	nbsp = '␣',
+-- } -- Characters to show for tabs, spaces, and end of line
