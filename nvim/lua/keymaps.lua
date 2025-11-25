@@ -1,18 +1,21 @@
 local keymap = vim.keymap
 local s = { silent = true }
 
+-- select all
+keymap.set("n", "<C-a>", "go<S-v>G")
 -- go to normal mode
 keymap.set("i", "jj", "<Esc>")
+
+-- configuration
+keymap.set("n", "<leader>c", ":edit $MYVIMRC<CR>")
+-- semi colon to colon
+keymap.set("n", ";", ":");
 
 -- restart
 keymap.set("n", "<leader>rr", ":restart<CR>", { silent = true })
 
 -- oil
 keymap.set("n", "-", ":Oil<CR>", { silent = true }) -- open explorer
-
--- neotree
-keymap.set("n", "<leader>e", ":Neotree filesystem reveal right<CR>", { silent = true }) -- open explorer
-keymap.set("n", "<leader>ce", ":Neotree close<CR>", { silent = true })                  -- open explorer
 
 -- write and quit
 keymap.set("n", "<leader>w", ":write<CR>")
@@ -50,7 +53,43 @@ keymap.set("n", "<leader>fg", builtin.live_grep)
 keymap.set("n", "<leader>fh", builtin.help_tags)
 keymap.set("n", "<leader>fb", builtin.buffers)
 keymap.set("n", "<leader>fd", builtin.diagnostics)
+keymap.set("n", "<leader>fm", builtin.marks)
 
--- miniharp keymaps
-keymap.set("n", "<leader>m", '<cmd>lua require("miniharp").toggle_file()<CR>')
-keymap.set("n", "<leader>l", '<cmd>lua require("miniharp").show_list()<CR>')
+-- harpoon keymaps
+local harpoon = require("harpoon")
+
+harpoon:setup()
+
+keymap.set("n", "<leader>a", function()
+	harpoon:list():add()
+end)
+
+keymap.set("n", "<leader>n", function()
+	harpoon:list():next()
+end)
+
+keymap.set("n", "<leader>p", function()
+	harpoon:list():prev()
+end)
+
+-- basic telescope configuration
+local conf = require("telescope.config").values
+local themes = require("telescope.themes")
+local function toggle_telescope(harpoon_files)
+	local file_paths = {}
+	for _, item in ipairs(harpoon_files.items) do
+		table.insert(file_paths, item.value)
+	end
+
+	require("telescope.pickers").new(
+		themes.get_dropdown({}), {
+			prompt_title = "Harpoon",
+			finder = require("telescope.finders").new_table({
+				results = file_paths,
+			}),
+			previewer = conf.file_previewer({}),
+			sorter = conf.generic_sorter({}),
+		}):find()
+end
+
+vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end)
