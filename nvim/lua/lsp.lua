@@ -7,6 +7,7 @@ vim.lsp.enable({
 	"cssls",
 	"asm_lsp",
 	"marksman",
+	"svelte",
 })
 
 
