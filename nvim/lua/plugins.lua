@@ -22,11 +22,18 @@ vim.pack.add({
 		src = "https://github.com/ThePrimeagen/harpoon",
 		version = "harpoon2"
 	},
+
 	-- Colorschemes
 	{ src = "https://github.com/rose-pine/neovim" },
 	{ src = "https://github.com/vague-theme/vague.nvim" },
 	{ src = "https://github.com/kepano/flexoki-neovim" },
-	{ src = "https://github.com/catppuccin/nvim" }
+	{ src = "https://github.com/catppuccin/nvim" },
+
+	-- Nerdtree
+	{ src = "https://github.com/preservim/nerdtree" },
+	-- nerdtree dependencies
+	{ src = "https://github.com/ryanoasis/vim-devicons" },
+	{ src = "https://github.com/tiagofumo/vim-nerdtree-syntax-highlight" },
 
 })
 

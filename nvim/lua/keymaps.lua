@@ -46,6 +46,12 @@ keymap.set("n", "gd", vim.lsp.buf.definition)
 -- update plugins
 keymap.set("n", "<leader>ps", '<cmd>lua vim.pack.update()<CR>')
 
+--Nerdtree keymaps
+keymap.set("n", "<leader>n", ":NERDTreeFocus<CR>")
+keymap.set("n", "<C-n>", ":NERDTree<CR>")
+keymap.set("n", "<C-t>", ":NERDTreeToggle<CR>")
+keymap.set("n", "<C-f>", ":NERDTreeFind<CR>")
+
 -- telescope keymaps
 local builtin = require("telescope.builtin")
 keymap.set("n", "<leader>ff", builtin.find_files)
@@ -57,20 +63,10 @@ keymap.set("n", "<leader>fm", builtin.marks)
 
 -- harpoon keymaps
 local harpoon = require("harpoon")
-
 harpoon:setup()
-
-keymap.set("n", "<leader>a", function()
-	harpoon:list():add()
-end)
-
-keymap.set("n", "<leader>n", function()
-	harpoon:list():next()
-end)
-
-keymap.set("n", "<leader>p", function()
-	harpoon:list():prev()
-end)
+keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+keymap.set("n", "<leader>hn", function() harpoon:list():next() end)
+keymap.set("n", "<leader>hp", function() harpoon:list():prev() end)
 
 -- basic telescope configuration
 local conf = require("telescope.config").values
