@@ -14,10 +14,12 @@ vim.pack.add({
 	{ src = "https://github.com/m4xshen/autoclose.nvim" },
 	{ src = "https://github.com/numToStr/Comment.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
+	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
+
 	-- { src = "https://github.com/norcalli/nvim-colorizer.lua" }, -- install this when nightly is fixed
-	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
-	{ src = "https://github.com/ellisonleao/gruvbox.nvim" },
-	{ src = "https://github.com/mvllow/modes.nvim" }, -- different colors for different modes
+
+	{ src = "https://github.com/nvim-lualine/lualine.nvim" }, -- lualine
+	{ src = "https://github.com/mvllow/modes.nvim" },      -- different colors for different modes
 	{
 		src = "https://github.com/ThePrimeagen/harpoon",
 		version = "harpoon2"
@@ -25,15 +27,14 @@ vim.pack.add({
 
 	-- Colorschemes
 	{ src = "https://github.com/rose-pine/neovim" },
+	{ src = "https://github.com/ellisonleao/gruvbox.nvim" },
 	{ src = "https://github.com/vague-theme/vague.nvim" },
 	{ src = "https://github.com/kepano/flexoki-neovim" },
 	{ src = "https://github.com/catppuccin/nvim" },
+	{ src = "https://github.com/guilhermetk/all-hallows-eve.nvim" },
 
-	-- Nerdtree
-	{ src = "https://github.com/preservim/nerdtree" },
-	-- nerdtree dependencies
-	{ src = "https://github.com/ryanoasis/vim-devicons" },
-	{ src = "https://github.com/tiagofumo/vim-nerdtree-syntax-highlight" },
+	-- Nvimtree
+	{ src = "https://github.com/nvim-tree/nvim-tree.lua" },
 
 })
 
@@ -44,12 +45,43 @@ require("flexoki").setup({})
 require("catppuccin").setup({
 	flavour = "mocha"
 })
-vim.cmd("colorscheme flexoki-light")
+vim.cmd("colorscheme rose-pine")
 --
 --
 require("harpoon").setup({})
 require("modes").setup({})
 require("lualine").setup({})
+require("ibl").setup({})
+require("nvim-tree").setup({
+	hijack_cursor = true,
+	sync_root_with_cwd = true,
+	update_focused_file = {
+		enable = true,
+		update_root = false
+	},
+	view = {
+		side = "right",
+		width = 30,
+		preserve_window_proportions = true,
+	},
+	renderer = {
+		root_folder_label = false,
+		highlight_git = true,
+		icons = {
+			glyphs = {
+				default = "󰈚",
+				folder = {
+					default = "",
+					empty = "",
+					empty_open = "",
+					open = "",
+					symlink = "",
+				},
+				git = { unmerged = "" },
+			},
+		},
+	},
+})
 
 require("oil").setup({})
 require("Comment").setup({})
@@ -83,9 +115,14 @@ require("telescope").setup({
 
 	}
 })
+
+-- git signs
 require("gitsigns").setup({ signcolumn = true })
+-- Mason
 require("mason").setup({})
+-- devicons
 require("nvim-web-devicons").setup({})
+-- blink autocompletion
 require("blink.cmp").setup({
 	fuzzy = { implementation = "prefer_rust_with_warning" },
 	appearance = {
