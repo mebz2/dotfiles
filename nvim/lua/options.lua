@@ -17,7 +17,7 @@ o.linebreak = true
 o.swapfile = false
 
 o.clipboard = "unnamedplus"
-o.guicursor = "i:block"
+-- o.guicursor = "i:block"
 o.incsearch = true
 o.hlsearch = false
 o.ignorecase = true
@@ -26,6 +26,8 @@ o.undofile = true
 o.winborder = "rounded"
 o.cursorline = true -- highlight the current line
 o.autoindent = true -- Enable auto indentation
+
+vim.cmd(":hi statusline guibg=NONE")
 
 -- o.list = true
 -- o.listchars = {
