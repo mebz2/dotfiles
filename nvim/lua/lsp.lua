@@ -8,6 +8,7 @@ vim.lsp.enable({
 	"asm_lsp",
 	"marksman",
 	"svelte",
+	"jsonls",
 })
 
 
