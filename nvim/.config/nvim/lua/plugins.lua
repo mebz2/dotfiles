@@ -16,7 +16,7 @@ vim.pack.add({
 	{ src = "https://github.com/numToStr/Comment.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
-	{ src = "https://github.com/neovim/nvim-lspconfig"},
+	{ src = "https://github.com/neovim/nvim-lspconfig" },
 
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" }, -- lualine
 	{

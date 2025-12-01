@@ -29,9 +29,9 @@ o.autoindent = true -- Enable auto indentation
 
 vim.cmd(":hi statusline guibg=NONE")
 
--- o.list = true
--- o.listchars = {
--- 	tab = '» ',
--- 	trail = '·',
--- 	nbsp = '␣',
--- } -- Characters to show for tabs, spaces, and end of line
+o.list = true
+o.listchars = {
+	tab = '» ',
+	trail = '·',
+	nbsp = '␣',
+} -- Characters to show for tabs, spaces, and end of line
