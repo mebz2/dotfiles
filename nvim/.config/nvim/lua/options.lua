@@ -27,6 +27,7 @@ o.winborder = "rounded"
 o.cursorline = true -- highlight the current line
 o.autoindent = true -- Enable auto indentation
 
+vim.diagnostic.config({ virtual_text = true })
 vim.cmd(":hi statusline guibg=NONE")
 
 o.list = true

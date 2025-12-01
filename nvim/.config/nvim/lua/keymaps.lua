@@ -12,7 +12,7 @@ k.set("n", "<leader>cd", ":cd %:p:h<CR>")
 -- configuration
 k.set("n", "<leader>cc", ":edit $MYVIMRC<CR>")
 -- semi colon to colon
-k.set("n", ";", ":");
+k.set("n", ";", ":")
 
 -- restart
 k.set("n", "<leader>rr", ":restart<CR>", { silent = true })
@@ -50,7 +50,7 @@ k.set("n", "<leader>rn", vim.lsp.buf.rename)
 k.set("n", "g.", require("actions-preview").code_actions)
 
 -- update plugins
-k.set("n", "<leader>ps", '<cmd>lua vim.pack.update()<CR>')
+k.set("n", "<leader>ps", "<cmd>lua vim.pack.update()<CR>")
 
 --Nvimtree keymaps
 k.set("n", "<leader>n", ":NvimTreeToggle<CR>")
@@ -68,9 +68,15 @@ k.set("n", "<leader>fm", builtin.marks)
 -- harpoon keymaps
 local harpoon = require("harpoon")
 harpoon:setup()
-k.set("n", "<leader>a", function() harpoon:list():add() end)
-k.set("n", "<leader>hn", function() harpoon:list():next() end)
-k.set("n", "<leader>hp", function() harpoon:list():prev() end)
+k.set("n", "<leader>a", function()
+	harpoon:list():add()
+end)
+k.set("n", "<leader>hn", function()
+	harpoon:list():next()
+end)
+k.set("n", "<leader>hp", function()
+	harpoon:list():prev()
+end)
 k.set("n", "<C-e>", function()
 	harpoon.ui:toggle_quick_menu(harpoon:list())
 end)

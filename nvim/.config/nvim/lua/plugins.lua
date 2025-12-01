@@ -15,8 +15,8 @@ vim.pack.add({
 	{ src = "https://github.com/m4xshen/autoclose.nvim" },
 	{ src = "https://github.com/numToStr/Comment.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
-	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
+	{src ="https://github.com/mason-org/mason-lspconfig.nvim" },
 
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" }, -- lualine
 	{
@@ -48,7 +48,6 @@ vim.cmd("colorscheme vague")
 
 require("harpoon").setup({})
 require("lualine").setup({})
-require("ibl").setup({})
 require("nvim-tree").setup({
 	hijack_cursor = true,
 	sync_root_with_cwd = true,
@@ -116,6 +115,7 @@ require("telescope").setup({
 require("gitsigns").setup({ signcolumn = true })
 -- Mason
 require("mason").setup({})
+require("mason-lspconfig").setup()
 -- devicons
 require("nvim-web-devicons").setup({})
 -- blink autocompletion
