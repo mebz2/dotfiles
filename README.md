@@ -2,5 +2,5 @@
 
 - Clone this repository in your home directory or use the command below
 ``` bash
-    git clone https://github.com/mebz2/dotfiles ~/dotfiles
+git clone https://github.com/mebz2/dotfiles ~/dotfiles
 ```
