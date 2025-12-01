@@ -47,6 +47,7 @@ k.set({ "n", "v" }, "H", "^")
 k.set("n", "K", vim.lsp.buf.hover)
 k.set("n", "gd", vim.lsp.buf.definition)
 k.set("n", "<leader>rn", vim.lsp.buf.rename)
+k.set("n", "g.", require("actions-preview").code_actions)
 
 -- update plugins
 k.set("n", "<leader>ps", '<cmd>lua vim.pack.update()<CR>')

@@ -5,9 +5,10 @@ vim.pack.add({
 		src = "https://github.com/saghen/blink.cmp",
 		version = vim.version.range("^1")
 	},
+	{ src = "https://github.com/aznhe21/actions-preview.nvim" }, -- code actions
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" }, -- dependency
-	{ src = "https://github.com/MunifTanjim/nui.nvim" },     -- dependency
-	{ src = "https://github.com/nvim-lua/plenary.nvim" },    -- dependency
+	{ src = "https://github.com/MunifTanjim/nui.nvim" },      -- dependency
+	{ src = "https://github.com/nvim-lua/plenary.nvim" },     -- dependency
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/windwp/nvim-ts-autotag" },
@@ -16,10 +17,7 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
 
-	-- { src = "https://github.com/norcalli/nvim-colorizer.lua" }, -- install this when nightly is fixed
-
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" }, -- lualine
-	{ src = "https://github.com/mvllow/modes.nvim" },      -- different colors for different modes
 	{
 		src = "https://github.com/ThePrimeagen/harpoon",
 		version = "harpoon2"
@@ -39,17 +37,15 @@ vim.pack.add({
 })
 
 -- color schemes
-require("vague").setup({})
+require("vague").setup({ transparent = true })
 require("rose-pine").setup({ variant = "dawn", })
 require("flexoki").setup({})
 require("catppuccin").setup({
 	flavour = "mocha"
 })
-vim.cmd("colorscheme rose-pine")
---
---
+vim.cmd("colorscheme vague")
+
 require("harpoon").setup({})
-require("modes").setup({})
 require("lualine").setup({})
 require("ibl").setup({})
 require("nvim-tree").setup({
@@ -85,7 +81,6 @@ require("nvim-tree").setup({
 
 require("oil").setup({})
 require("Comment").setup({})
--- require("colorizer").setup() -- not working on nightly yet
 require("autoclose").setup({})
 require("nvim-ts-autotag").setup({})
 
@@ -135,3 +130,5 @@ require("blink.cmp").setup({
 		}
 	},
 })
+
+require("actions-preview").setup({})
