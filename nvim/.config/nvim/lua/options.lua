@@ -32,7 +32,7 @@ vim.cmd(":hi statusline guibg=NONE")
 
 o.list = true
 o.listchars = {
-	tab = '» ',
-	trail = '·',
-	nbsp = '␣',
+	tab = "» ",
+	trail = "·",
+	nbsp = "␣",
 } -- Characters to show for tabs, spaces, and end of line
