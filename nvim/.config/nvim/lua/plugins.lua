@@ -19,7 +19,6 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/nvim-mini/mini.surround" },
-	-- { src = "https://github.com/norcalli/nvim-colorizer.lua" }, -- uncomment after deprecated vim.table is fixed
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" }, -- lualine
 	{
 		src = "https://github.com/ThePrimeagen/harpoon",
@@ -35,7 +34,6 @@ vim.pack.add({
 require("vague").setup({ transparent = false })
 vim.cmd("colorscheme vague")
 
--- require("colorizer").setup({})
 require("mini.surround").setup({})
 require("harpoon").setup({})
 require("lualine").setup({})
