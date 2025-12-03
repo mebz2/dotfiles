@@ -1,6 +1,8 @@
 vim.pack.add({
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
+	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
+	{ src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
 	{
 		src = "https://github.com/saghen/blink.cmp",
 		version = vim.version.range("^1"),
@@ -16,27 +18,25 @@ vim.pack.add({
 	{ src = "https://github.com/numToStr/Comment.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
-	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
-
+	{ src = "https://github.com/nvim-mini/mini.surround" },
 	-- { src = "https://github.com/norcalli/nvim-colorizer.lua" }, -- uncomment after deprecated vim.table is fixed
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" }, -- lualine
 	{
 		src = "https://github.com/ThePrimeagen/harpoon",
 		version = "harpoon2",
 	},
-
 	-- Colorschemes
 	{ src = "https://github.com/vague-theme/vague.nvim" },
-
 	-- Nvimtree
 	{ src = "https://github.com/nvim-tree/nvim-tree.lua" },
 })
 
 -- color schemes
-require("vague").setup({ transparent = true })
+require("vague").setup({ transparent = false })
 vim.cmd("colorscheme vague")
 
 -- require("colorizer").setup({})
+require("mini.surround").setup({})
 require("harpoon").setup({})
 require("lualine").setup({})
 require("nvim-tree").setup({
@@ -105,8 +105,9 @@ require("telescope").setup({
 require("gitsigns").setup({ signcolumn = true })
 -- Mason
 require("mason").setup({})
-require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls" },
+require("mason-lspconfig").setup({})
+require("mason-tool-installer").setup({
+	ensure_installed = { "lua_ls", "stylua" },
 })
 -- devicons
 require("nvim-web-devicons").setup({})
