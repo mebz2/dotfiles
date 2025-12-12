@@ -4,3 +4,5 @@
 ``` bash
 git clone https://github.com/mebz2/dotfiles ~/dotfiles
 ```
+
+- Go into the scripts folder, make link.sh an executable and run it

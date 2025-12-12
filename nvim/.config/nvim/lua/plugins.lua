@@ -20,6 +20,12 @@ vim.pack.add({
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/nvim-mini/mini.surround" },
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" }, -- lualine
+
+	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" }, -- markdown
+	{
+		src = "https://github.com/iamcco/markdown-preview.nvim",
+	}, -- markdown
+
 	{
 		src = "https://github.com/ThePrimeagen/harpoon",
 		version = "harpoon2",
@@ -124,3 +130,6 @@ require("blink.cmp").setup({
 })
 
 require("actions-preview").setup({})
+require("render-markdown").setup({
+	completions = { lsp = { enabled = true } },
+})

@@ -21,7 +21,7 @@ k.set("n", "<leader>rr", ":restart<CR>", { silent = true })
 k.set("n", "-", ":Oil<CR>", { silent = true }) -- open explorer
 
 -- write and quit
-k.set("n", "<leader>w", ":write<CR>")
+k.set("n", "<leader>w", ":write<CR>", { silent = true })
 k.set("n", "<leader>lf", vim.lsp.buf.format)
 k.set("n", "<leader>qq", ":qall<CR>")
 
