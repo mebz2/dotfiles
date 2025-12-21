@@ -1,5 +1,5 @@
 #!/bin/bash
 
 # comment
-stow "$HOME/dotfiles/nvim"
-stow "$HOME/dotfiles/tmux"
+cd "$HOME/dotfiles/" && stow "nvim"
+cd "$HOME/dotfiles/" && stow "tmux"

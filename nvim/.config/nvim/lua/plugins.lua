@@ -21,11 +21,17 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.surround" },
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" }, -- lualine
 
-	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" }, -- markdown
 	{
 		src = "https://github.com/iamcco/markdown-preview.nvim",
-	}, -- markdown
-
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		build = "cd app && npm install",
+		init = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	},
+	{ src = "https://github.com/brianhuster/live-preview.nvim" },
+	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" }, -- markdown
 	{
 		src = "https://github.com/ThePrimeagen/harpoon",
 		version = "harpoon2",
@@ -104,7 +110,6 @@ require("telescope").setup({
 		},
 	},
 })
-
 -- git signs
 require("gitsigns").setup({ signcolumn = true })
 -- Mason
