@@ -10,7 +10,7 @@ k.set("i", "jj", "<Esc>")
 k.set("n", "<leader>cd", ":cd %:p:h<CR>")
 
 -- configuration
-k.set("n", "<leader>cc", ":edit $MYVIMRC<CR>")
+k.set("n", "<leader>cc", ":edit $MYVIMRC<CR>", s)
 -- semi colon to colon
 k.set("n", ";", ":")
 
@@ -21,9 +21,9 @@ k.set("n", "<leader>rr", ":restart<CR>", { silent = true })
 k.set("n", "-", ":Oil<CR>", { silent = true }) -- open explorer
 
 -- write and quit
-k.set("n", "<leader>w", ":write<CR>", { silent = true })
+k.set("n", "<leader>w", ":write<CR>", s)
 k.set("n", "<leader>lf", vim.lsp.buf.format)
-k.set("n", "<leader>qq", ":qall<CR>")
+k.set("n", "<leader>qq", ":qall<CR>", s)
 
 -- move lines
 k.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
