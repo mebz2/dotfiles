@@ -1,6 +1,9 @@
 local k = vim.keymap
 local s = { silent = true }
 
+-- split
+k.set("n", "<C-;>", ":vsplit<CR>")
+
 -- select all
 k.set("n", "<C-a>", "go<S-v>G")
 -- go to normal mode
@@ -53,8 +56,8 @@ k.set("n", "g.", require("actions-preview").code_actions)
 k.set("n", "<leader>ps", "<cmd>lua vim.pack.update()<CR>")
 
 --Nvimtree keymaps
-k.set("n", "<leader>n", ":NvimTreeToggle<CR>")
-k.set("n", "<C-n>", ":wincmd p<CR>")
+k.set("n", "<leader>n", ":NvimTreeToggle<CR>", { silent = true })
+k.set("n", "<C-n>", ":wincmd p<CR>", { silent = true })
 
 -- telescope keymaps
 local builtin = require("telescope.builtin")
